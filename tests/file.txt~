@@ -1,0 +1,5 @@
+__main:
+	bmov rega,110
+	push rega
+	vm_stack_dump
+	halt

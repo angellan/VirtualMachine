@@ -1,0 +1,14 @@
+loquillo2:
+	jmp intentando
+loquillo:
+	jmp loquillo2
+__main:
+	bpush 1
+	vm_stack_dump
+	jmp loquillo
+	bpush1
+	vm_stack_dump
+	intentando:
+	vm_stack_dump
+	cmp %rega,1
+halt

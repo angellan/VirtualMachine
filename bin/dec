@@ -1,0 +1,1451 @@
+bin/vm:
+(__TEXT,__text) section
+_new_file:
+00000001000007a0	pushq	%rbp
+00000001000007a1	movq	%rsp, %rbp
+00000001000007a4	subq	$0x50, %rsp
+00000001000007a8	leaq	0x15e1(%rip), %rax      ## literal pool for: "TESTING 3"
+00000001000007af	movq	%rdi, -0x10(%rbp)
+00000001000007b3	movq	%rax, %rdi
+00000001000007b6	movb	$0x0, %al
+00000001000007b8	callq	0x100001cf4             ## symbol stub for: _printf
+00000001000007bd	cmpq	$0x0, -0x10(%rbp)
+00000001000007c5	movl	%eax, -0x2c(%rbp)
+00000001000007c8	jne	0x1000007db
+00000001000007ce	movq	$0x0, -0x8(%rbp)
+00000001000007d6	jmp	0x1000008f1
+00000001000007db	movabsq	$0x18, %rdi
+00000001000007e5	callq	0x100001cee             ## symbol stub for: _malloc
+00000001000007ea	leaq	0x15a9(%rip), %rsi      ## literal pool for: "rb"
+00000001000007f1	movq	%rax, -0x20(%rbp)
+00000001000007f5	movq	$0x0, -0x28(%rbp)
+00000001000007fd	movq	-0x10(%rbp), %rdi
+0000000100000801	callq	0x100001cd0             ## symbol stub for: _fopen
+0000000100000806	movabsq	$0x0, %rsi
+0000000100000810	movl	$0x2, %edx
+0000000100000815	movq	%rax, -0x18(%rbp)
+0000000100000819	movq	-0x18(%rbp), %rdi
+000000010000081d	callq	0x100001ce2             ## symbol stub for: _fseek
+0000000100000822	movq	-0x18(%rbp), %rdi
+0000000100000826	movl	%eax, -0x30(%rbp)
+0000000100000829	callq	0x100001ce8             ## symbol stub for: _ftell
+000000010000082e	movabsq	$0x0, %rsi
+0000000100000838	movl	$0x0, %edx
+000000010000083d	movq	%rax, -0x28(%rbp)
+0000000100000841	movq	-0x18(%rbp), %rdi
+0000000100000845	callq	0x100001ce2             ## symbol stub for: _fseek
+000000010000084a	movq	-0x28(%rbp), %rsi
+000000010000084e	addq	$0x1, %rsi
+0000000100000855	movq	%rsi, %rdi
+0000000100000858	movl	%eax, -0x34(%rbp)
+000000010000085b	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000860	movq	-0x20(%rbp), %rsi
+0000000100000864	movq	%rax, (%rsi)
+0000000100000867	movq	-0x20(%rbp), %rax
+000000010000086b	cmpq	$0x0, (%rax)
+0000000100000872	jne	0x100000891
+0000000100000878	movq	-0x18(%rbp), %rdi
+000000010000087c	callq	0x100001cca             ## symbol stub for: _fclose
+0000000100000881	movq	$0x0, -0x8(%rbp)
+0000000100000889	movl	%eax, -0x38(%rbp)
+000000010000088c	jmp	0x1000008f1
+0000000100000891	movabsq	$0x1, %rdx
+000000010000089b	movq	-0x20(%rbp), %rax
+000000010000089f	movq	(%rax), %rdi
+00000001000008a2	movq	-0x28(%rbp), %rsi
+00000001000008a6	movq	-0x18(%rbp), %rcx
+00000001000008aa	callq	0x100001cd6             ## symbol stub for: _fread
+00000001000008af	movq	-0x18(%rbp), %rdi
+00000001000008b3	movq	%rax, -0x40(%rbp)
+00000001000008b7	callq	0x100001cca             ## symbol stub for: _fclose
+00000001000008bc	movq	-0x28(%rbp), %rcx
+00000001000008c0	movq	-0x20(%rbp), %rdx
+00000001000008c4	movq	(%rdx), %rdx
+00000001000008c7	movb	$0x0, (%rdx,%rcx)
+00000001000008cb	movq	-0x28(%rbp), %rcx
+00000001000008cf	movl	%ecx, %r8d
+00000001000008d2	movq	-0x20(%rbp), %rcx
+00000001000008d6	movl	%r8d, 0x8(%rcx)
+00000001000008da	movq	-0x10(%rbp), %rcx
+00000001000008de	movq	-0x20(%rbp), %rdx
+00000001000008e2	movq	%rcx, 0x10(%rdx)
+00000001000008e6	movq	-0x20(%rbp), %rcx
+00000001000008ea	movq	%rcx, -0x8(%rbp)
+00000001000008ee	movl	%eax, -0x44(%rbp)
+00000001000008f1	movq	-0x8(%rbp), %rax
+00000001000008f5	addq	$0x50, %rsp
+00000001000008f9	popq	%rbp
+00000001000008fa	retq
+00000001000008fb	nopl	(%rax,%rax)
+_file_delete:
+0000000100000900	pushq	%rbp
+0000000100000901	movq	%rsp, %rbp
+0000000100000904	subq	$0x10, %rsp
+0000000100000908	movq	%rdi, -0x8(%rbp)
+000000010000090c	movq	-0x8(%rbp), %rdi
+0000000100000910	cmpq	$0x0, (%rdi)
+0000000100000917	je	0x100000929
+000000010000091d	movq	-0x8(%rbp), %rax
+0000000100000921	movq	(%rax), %rdi
+0000000100000924	callq	0x100001cdc             ## symbol stub for: _free
+0000000100000929	movq	-0x8(%rbp), %rax
+000000010000092d	movq	%rax, %rdi
+0000000100000930	callq	0x100001cdc             ## symbol stub for: _free
+0000000100000935	addq	$0x10, %rsp
+0000000100000939	popq	%rbp
+000000010000093a	retq
+000000010000093b	nopl	(%rax,%rax)
+_file_get_buffer:
+0000000100000940	pushq	%rbp
+0000000100000941	movq	%rsp, %rbp
+0000000100000944	subq	$0x20, %rsp
+0000000100000948	movq	%rdi, -0x10(%rbp)
+000000010000094c	movq	-0x10(%rbp), %rdi
+0000000100000950	cmpq	$0x0, (%rdi)
+0000000100000957	jne	0x10000096a
+000000010000095d	movq	$0x0, -0x8(%rbp)
+0000000100000965	jmp	0x1000009a9
+000000010000096a	movq	-0x10(%rbp), %rax
+000000010000096e	movl	0x8(%rax), %ecx
+0000000100000971	movl	%ecx, %edi
+0000000100000973	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000978	movabsq	$-0x1, %rcx
+0000000100000982	movq	%rax, -0x18(%rbp)
+0000000100000986	movq	-0x18(%rbp), %rdi
+000000010000098a	movq	-0x10(%rbp), %rax
+000000010000098e	movq	(%rax), %rsi
+0000000100000991	movq	-0x10(%rbp), %rax
+0000000100000995	movl	0x8(%rax), %edx
+0000000100000998	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+000000010000099d	movq	-0x18(%rbp), %rcx
+00000001000009a1	movq	%rcx, -0x8(%rbp)
+00000001000009a5	movq	%rax, -0x20(%rbp)
+00000001000009a9	movq	-0x8(%rbp), %rax
+00000001000009ad	addq	$0x20, %rsp
+00000001000009b1	popq	%rbp
+00000001000009b2	retq
+00000001000009b3	nopw	%cs:(%rax,%rax)
+_file_get_size:
+00000001000009c0	pushq	%rbp
+00000001000009c1	movq	%rsp, %rbp
+00000001000009c4	movq	%rdi, -0x8(%rbp)
+00000001000009c8	movq	-0x8(%rbp), %rdi
+00000001000009cc	movl	0x8(%rdi), %eax
+00000001000009cf	popq	%rbp
+00000001000009d0	retq
+00000001000009d1	nop
+00000001000009d2	nop
+00000001000009d3	nop
+00000001000009d4	nop
+00000001000009d5	nop
+00000001000009d6	nop
+00000001000009d7	nop
+00000001000009d8	nop
+00000001000009d9	nop
+00000001000009da	nop
+00000001000009db	nop
+00000001000009dc	nop
+00000001000009dd	nop
+00000001000009de	nop
+00000001000009df	nop
+_main:
+00000001000009e0	pushq	%rbp
+00000001000009e1	movq	%rsp, %rbp
+00000001000009e4	subq	$0x30, %rsp
+00000001000009e8	movl	$0x0, -0x4(%rbp)
+00000001000009ef	movl	%edi, -0x8(%rbp)
+00000001000009f2	movq	%rsi, -0x10(%rbp)
+00000001000009f6	callq	_new_svector
+00000001000009fb	leaq	0x139b(%rip), %rdi      ## literal pool for: "Hola como estas todo bien?"
+0000000100000a02	movq	%rax, -0x18(%rbp)
+0000000100000a06	callq	_new_string
+0000000100000a0b	leaq	0x13a6(%rip), %rdi      ## literal pool for: "B"
+0000000100000a12	movq	%rax, -0x20(%rbp)
+0000000100000a16	callq	_new_string
+0000000100000a1b	movq	%rax, -0x28(%rbp)
+0000000100000a1f	movq	-0x18(%rbp), %rdi
+0000000100000a23	movq	-0x20(%rbp), %rsi
+0000000100000a27	callq	_svector_push
+0000000100000a2c	leaq	0x1387(%rip), %rsi      ## literal pool for: "lkansmdlkasldkaslkd"
+0000000100000a33	movq	-0x18(%rbp), %rdi
+0000000100000a37	callq	_svector_push_text
+0000000100000a3c	leaq	0x138b(%rip), %rsi      ## literal pool for: "2"
+0000000100000a43	movq	-0x18(%rbp), %rdi
+0000000100000a47	callq	_svector_push_text
+0000000100000a4c	leaq	0x137d(%rip), %rsi      ## literal pool for: "3"
+0000000100000a53	movq	-0x18(%rbp), %rdi
+0000000100000a57	callq	_svector_push_text
+0000000100000a5c	leaq	0x136f(%rip), %rsi      ## literal pool for: "4"
+0000000100000a63	movq	-0x18(%rbp), %rdi
+0000000100000a67	callq	_svector_push_text
+0000000100000a6c	leaq	0x1361(%rip), %rsi      ## literal pool for: "5"
+0000000100000a73	movq	-0x18(%rbp), %rdi
+0000000100000a77	callq	_svector_push_text
+0000000100000a7c	movl	$0x0, %esi
+0000000100000a81	movq	-0x18(%rbp), %rdi
+0000000100000a85	callq	_svector_erase
+0000000100000a8a	movq	-0x18(%rbp), %rdi
+0000000100000a8e	movb	%al, -0x29(%rbp)
+0000000100000a91	callq	_svector_dump
+0000000100000a96	movq	-0x20(%rbp), %rdi
+0000000100000a9a	callq	_string_delete
+0000000100000a9f	movq	-0x28(%rbp), %rdi
+0000000100000aa3	callq	_string_delete
+0000000100000aa8	movq	-0x18(%rbp), %rdi
+0000000100000aac	callq	_svector_delete
+0000000100000ab1	movl	$0x0, %eax
+0000000100000ab6	addq	$0x30, %rsp
+0000000100000aba	popq	%rbp
+0000000100000abb	retq
+0000000100000abc	nop
+0000000100000abd	nop
+0000000100000abe	nop
+0000000100000abf	nop
+_new_string:
+0000000100000ac0	pushq	%rbp
+0000000100000ac1	movq	%rsp, %rbp
+0000000100000ac4	subq	$0x20, %rsp
+0000000100000ac8	movabsq	$0x10, %rax
+0000000100000ad2	movq	%rdi, -0x8(%rbp)
+0000000100000ad6	movq	%rax, %rdi
+0000000100000ad9	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000ade	movq	%rax, -0x10(%rbp)
+0000000100000ae2	movq	-0x8(%rbp), %rdi
+0000000100000ae6	callq	0x100001d00             ## symbol stub for: _strlen
+0000000100000aeb	movl	%eax, %ecx
+0000000100000aed	movq	-0x10(%rbp), %rax
+0000000100000af1	movl	%ecx, 0x8(%rax)
+0000000100000af4	movq	-0x10(%rbp), %rax
+0000000100000af8	movl	0x8(%rax), %ecx
+0000000100000afb	movl	%ecx, %edi
+0000000100000afd	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000b02	movabsq	$-0x1, %rcx
+0000000100000b0c	movq	-0x10(%rbp), %rdi
+0000000100000b10	movq	%rax, (%rdi)
+0000000100000b13	movq	-0x10(%rbp), %rax
+0000000100000b17	movq	(%rax), %rdi
+0000000100000b1a	movq	-0x8(%rbp), %rsi
+0000000100000b1e	movq	-0x10(%rbp), %rax
+0000000100000b22	movl	0x8(%rax), %edx
+0000000100000b25	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100000b2a	movq	-0x10(%rbp), %rcx
+0000000100000b2e	movl	0x8(%rcx), %r8d
+0000000100000b32	movl	%r8d, %ecx
+0000000100000b35	movq	-0x10(%rbp), %rdx
+0000000100000b39	movq	(%rdx), %rdx
+0000000100000b3c	movb	$0x0, (%rdx,%rcx)
+0000000100000b40	movq	-0x10(%rbp), %rcx
+0000000100000b44	movq	%rax, -0x18(%rbp)
+0000000100000b48	movq	%rcx, %rax
+0000000100000b4b	addq	$0x20, %rsp
+0000000100000b4f	popq	%rbp
+0000000100000b50	retq
+0000000100000b51	nopw	%cs:(%rax,%rax)
+_new_array_string:
+0000000100000b60	pushq	%rbp
+0000000100000b61	movq	%rsp, %rbp
+0000000100000b64	subq	$0x10, %rsp
+0000000100000b68	movabsq	$0x10, %rsi
+0000000100000b72	movl	%edi, -0x4(%rbp)
+0000000100000b75	movl	$0x0, -0x8(%rbp)
+0000000100000b7c	movl	-0x4(%rbp), %edi
+0000000100000b7f	callq	0x100001cc4             ## symbol stub for: _calloc
+0000000100000b84	movq	%rax, -0x10(%rbp)
+0000000100000b88	movl	-0x8(%rbp), %eax
+0000000100000b8b	cmpl	-0x4(%rbp), %eax
+0000000100000b8e	jae	0x100000bd1
+0000000100000b94	movl	-0x8(%rbp), %eax
+0000000100000b97	movl	%eax, %ecx
+0000000100000b99	movq	-0x10(%rbp), %rdx
+0000000100000b9d	shlq	$0x4, %rcx
+0000000100000ba1	addq	%rcx, %rdx
+0000000100000ba4	movq	$0x0, (%rdx)
+0000000100000bab	movl	-0x4(%rbp), %eax
+0000000100000bae	movl	-0x8(%rbp), %esi
+0000000100000bb1	movl	%esi, %ecx
+0000000100000bb3	movq	-0x10(%rbp), %rdx
+0000000100000bb7	shlq	$0x4, %rcx
+0000000100000bbb	addq	%rcx, %rdx
+0000000100000bbe	movl	%eax, 0x8(%rdx)
+0000000100000bc1	movl	-0x8(%rbp), %eax
+0000000100000bc4	addl	$0x1, %eax
+0000000100000bc9	movl	%eax, -0x8(%rbp)
+0000000100000bcc	jmp	0x100000b88
+0000000100000bd1	movq	-0x10(%rbp), %rax
+0000000100000bd5	addq	$0x10, %rsp
+0000000100000bd9	popq	%rbp
+0000000100000bda	retq
+0000000100000bdb	nopl	(%rax,%rax)
+_string_alloc:
+0000000100000be0	pushq	%rbp
+0000000100000be1	movq	%rsp, %rbp
+0000000100000be4	subq	$0x10, %rsp
+0000000100000be8	movabsq	$0x10, %rsi
+0000000100000bf2	movl	%edi, -0x4(%rbp)
+0000000100000bf5	movl	-0x4(%rbp), %edi
+0000000100000bf8	callq	0x100001cc4             ## symbol stub for: _calloc
+0000000100000bfd	addq	$0x10, %rsp
+0000000100000c01	popq	%rbp
+0000000100000c02	retq
+0000000100000c03	nopw	%cs:(%rax,%rax)
+_string_init:
+0000000100000c10	pushq	%rbp
+0000000100000c11	movq	%rsp, %rbp
+0000000100000c14	subq	$0x20, %rsp
+0000000100000c18	movq	%rdi, -0x8(%rbp)
+0000000100000c1c	movq	%rsi, -0x10(%rbp)
+0000000100000c20	movq	-0x10(%rbp), %rdi
+0000000100000c24	callq	0x100001d00             ## symbol stub for: _strlen
+0000000100000c29	movl	%eax, %ecx
+0000000100000c2b	movq	-0x8(%rbp), %rax
+0000000100000c2f	movl	%ecx, 0x8(%rax)
+0000000100000c32	movq	-0x8(%rbp), %rax
+0000000100000c36	movl	0x8(%rax), %ecx
+0000000100000c39	movl	%ecx, %edi
+0000000100000c3b	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000c40	movabsq	$-0x1, %rcx
+0000000100000c4a	movq	-0x8(%rbp), %rsi
+0000000100000c4e	movq	%rax, (%rsi)
+0000000100000c51	movq	-0x8(%rbp), %rax
+0000000100000c55	movq	(%rax), %rdi
+0000000100000c58	movq	-0x10(%rbp), %rsi
+0000000100000c5c	movq	-0x8(%rbp), %rax
+0000000100000c60	movl	0x8(%rax), %edx
+0000000100000c63	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100000c68	movq	-0x8(%rbp), %rcx
+0000000100000c6c	movl	0x8(%rcx), %r8d
+0000000100000c70	movl	%r8d, %ecx
+0000000100000c73	movq	-0x8(%rbp), %rdx
+0000000100000c77	movq	(%rdx), %rdx
+0000000100000c7a	movb	$0x0, (%rdx,%rcx)
+0000000100000c7e	movq	%rax, -0x18(%rbp)
+0000000100000c82	addq	$0x20, %rsp
+0000000100000c86	popq	%rbp
+0000000100000c87	retq
+0000000100000c88	nopl	(%rax,%rax)
+_string_set:
+0000000100000c90	pushq	%rbp
+0000000100000c91	movq	%rsp, %rbp
+0000000100000c94	subq	$0x40, %rsp
+0000000100000c98	movq	%rdi, -0x8(%rbp)
+0000000100000c9c	movq	%rsi, -0x10(%rbp)
+0000000100000ca0	movq	-0x8(%rbp), %rsi
+0000000100000ca4	cmpq	$0x0, (%rsi)
+0000000100000cab	jne	0x100000cce
+0000000100000cb1	movq	-0x10(%rbp), %rdi
+0000000100000cb5	callq	0x100001d00             ## symbol stub for: _strlen
+0000000100000cba	movq	%rax, %rdi
+0000000100000cbd	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000cc2	movq	-0x8(%rbp), %rdi
+0000000100000cc6	movq	%rax, (%rdi)
+0000000100000cc9	jmp	0x100000cf8
+0000000100000cce	movq	-0x8(%rbp), %rax
+0000000100000cd2	movq	(%rax), %rdi
+0000000100000cd5	movq	-0x10(%rbp), %rax
+0000000100000cd9	movq	%rdi, -0x18(%rbp)
+0000000100000cdd	movq	%rax, %rdi
+0000000100000ce0	callq	0x100001d00             ## symbol stub for: _strlen
+0000000100000ce5	movq	-0x18(%rbp), %rdi
+0000000100000ce9	movq	%rax, %rsi
+0000000100000cec	callq	0x100001cfa             ## symbol stub for: _realloc
+0000000100000cf1	movq	-0x8(%rbp), %rsi
+0000000100000cf5	movq	%rax, (%rsi)
+0000000100000cf8	movabsq	$-0x1, %rcx
+0000000100000d02	movq	-0x8(%rbp), %rax
+0000000100000d06	movq	(%rax), %rdi
+0000000100000d09	movq	-0x10(%rbp), %rsi
+0000000100000d0d	movq	-0x10(%rbp), %rax
+0000000100000d11	movq	%rdi, -0x20(%rbp)
+0000000100000d15	movq	%rax, %rdi
+0000000100000d18	movq	%rcx, -0x28(%rbp)
+0000000100000d1c	movq	%rsi, -0x30(%rbp)
+0000000100000d20	callq	0x100001d00             ## symbol stub for: _strlen
+0000000100000d25	movq	-0x20(%rbp), %rdi
+0000000100000d29	movq	-0x30(%rbp), %rsi
+0000000100000d2d	movq	%rax, %rdx
+0000000100000d30	movq	-0x28(%rbp), %rcx
+0000000100000d34	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100000d39	movq	%rax, -0x38(%rbp)
+0000000100000d3d	addq	$0x40, %rsp
+0000000100000d41	popq	%rbp
+0000000100000d42	retq
+0000000100000d43	nopw	%cs:(%rax,%rax)
+_string_copy:
+0000000100000d50	pushq	%rbp
+0000000100000d51	movq	%rsp, %rbp
+0000000100000d54	subq	$0x20, %rsp
+0000000100000d58	movq	%rdi, -0x8(%rbp)
+0000000100000d5c	movq	%rsi, -0x10(%rbp)
+0000000100000d60	movq	-0x10(%rbp), %rsi
+0000000100000d64	movl	0x8(%rsi), %eax
+0000000100000d67	movq	-0x8(%rbp), %rsi
+0000000100000d6b	movl	%eax, 0x8(%rsi)
+0000000100000d6e	movq	-0x8(%rbp), %rsi
+0000000100000d72	movq	(%rsi), %rdi
+0000000100000d75	movq	-0x8(%rbp), %rsi
+0000000100000d79	movl	0x8(%rsi), %eax
+0000000100000d7c	movl	%eax, %esi
+0000000100000d7e	callq	0x100001cfa             ## symbol stub for: _realloc
+0000000100000d83	movabsq	$-0x1, %rcx
+0000000100000d8d	movq	-0x8(%rbp), %rsi
+0000000100000d91	movq	%rax, (%rsi)
+0000000100000d94	movq	-0x8(%rbp), %rax
+0000000100000d98	movq	(%rax), %rdi
+0000000100000d9b	movq	-0x10(%rbp), %rax
+0000000100000d9f	movq	(%rax), %rsi
+0000000100000da2	movq	-0x8(%rbp), %rax
+0000000100000da6	movl	0x8(%rax), %edx
+0000000100000da9	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100000dae	movq	-0x8(%rbp), %rcx
+0000000100000db2	movl	0x8(%rcx), %r8d
+0000000100000db6	movl	%r8d, %ecx
+0000000100000db9	movq	-0x8(%rbp), %rdx
+0000000100000dbd	movq	(%rdx), %rdx
+0000000100000dc0	movb	$0x0, (%rdx,%rcx)
+0000000100000dc4	movq	%rax, -0x18(%rbp)
+0000000100000dc8	addq	$0x20, %rsp
+0000000100000dcc	popq	%rbp
+0000000100000dcd	retq
+0000000100000dce	nop
+_string_delete:
+0000000100000dd0	pushq	%rbp
+0000000100000dd1	movq	%rsp, %rbp
+0000000100000dd4	subq	$0x10, %rsp
+0000000100000dd8	movq	%rdi, -0x8(%rbp)
+0000000100000ddc	movq	-0x8(%rbp), %rdi
+0000000100000de0	movq	(%rdi), %rdi
+0000000100000de3	callq	0x100001cdc             ## symbol stub for: _free
+0000000100000de8	movq	-0x8(%rbp), %rdi
+0000000100000dec	callq	0x100001cdc             ## symbol stub for: _free
+0000000100000df1	addq	$0x10, %rsp
+0000000100000df5	popq	%rbp
+0000000100000df6	retq
+0000000100000df7	nopw	(%rax,%rax)
+_string_ref_delete:
+0000000100000e00	pushq	%rbp
+0000000100000e01	movq	%rsp, %rbp
+0000000100000e04	subq	$0x10, %rsp
+0000000100000e08	movq	%rdi, -0x8(%rbp)
+0000000100000e0c	movq	-0x8(%rbp), %rdi
+0000000100000e10	movq	(%rdi), %rdi
+0000000100000e13	callq	0x100001cdc             ## symbol stub for: _free
+0000000100000e18	addq	$0x10, %rsp
+0000000100000e1c	popq	%rbp
+0000000100000e1d	retq
+0000000100000e1e	nop
+_string_debug:
+0000000100000e20	pushq	%rbp
+0000000100000e21	movq	%rsp, %rbp
+0000000100000e24	subq	$0x10, %rsp
+0000000100000e28	leaq	0xfa7(%rip), %rax       ## literal pool for: "[DEBUG STRING] -> \n\tString: %s\n\tLength: %d\n"
+0000000100000e2f	movq	%rdi, -0x8(%rbp)
+0000000100000e33	movq	-0x8(%rbp), %rdi
+0000000100000e37	movq	(%rdi), %rsi
+0000000100000e3a	movq	-0x8(%rbp), %rdi
+0000000100000e3e	movl	0x8(%rdi), %edx
+0000000100000e41	movq	%rax, %rdi
+0000000100000e44	movb	$0x0, %al
+0000000100000e46	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000e4b	movl	%eax, -0xc(%rbp)
+0000000100000e4e	addq	$0x10, %rsp
+0000000100000e52	popq	%rbp
+0000000100000e53	retq
+0000000100000e54	nop
+0000000100000e55	nop
+0000000100000e56	nop
+0000000100000e57	nop
+0000000100000e58	nop
+0000000100000e59	nop
+0000000100000e5a	nop
+0000000100000e5b	nop
+0000000100000e5c	nop
+0000000100000e5d	nop
+0000000100000e5e	nop
+0000000100000e5f	nop
+_bool_to_string:
+0000000100000e60	pushq	%rbp
+0000000100000e61	movq	%rsp, %rbp
+0000000100000e64	movq	%rdi, -0x10(%rbp)
+0000000100000e68	movq	-0x10(%rbp), %rdi
+0000000100000e6c	movsbl	(%rdi), %eax
+0000000100000e6f	cmpl	$0x1, %eax
+0000000100000e74	jne	0x100000e8a
+0000000100000e7a	leaq	0xf81(%rip), %rax       ## literal pool for: "true"
+0000000100000e81	movq	%rax, -0x8(%rbp)
+0000000100000e85	jmp	0x100000e95
+0000000100000e8a	leaq	0xf76(%rip), %rax       ## literal pool for: "false"
+0000000100000e91	movq	%rax, -0x8(%rbp)
+0000000100000e95	movq	-0x8(%rbp), %rax
+0000000100000e99	popq	%rbp
+0000000100000e9a	retq
+0000000100000e9b	nop
+0000000100000e9c	nop
+0000000100000e9d	nop
+0000000100000e9e	nop
+0000000100000e9f	nop
+_ivector_show_info:
+0000000100000ea0	pushq	%rbp
+0000000100000ea1	movq	%rsp, %rbp
+0000000100000ea4	subq	$0x20, %rsp
+0000000100000ea8	movq	%rdi, -0x8(%rbp)
+0000000100000eac	movq	-0x8(%rbp), %rdi
+0000000100000eb0	movl	0x8(%rdi), %esi
+0000000100000eb3	movq	-0x8(%rbp), %rdi
+0000000100000eb7	movl	0xc(%rdi), %edx
+0000000100000eba	movq	-0x8(%rbp), %rdi
+0000000100000ebe	addq	$0x10, %rdi
+0000000100000ec5	movl	%esi, -0xc(%rbp)
+0000000100000ec8	movl	%edx, -0x10(%rbp)
+0000000100000ecb	callq	_bool_to_string
+0000000100000ed0	leaq	0xf36(%rip), %rdi       ## literal pool for: "[?] Integer Vector Info\n\t            [->] Memory size: %d\n\t            [->] Iterator: %d\n\t            [->] Is blocked: %s\n"
+0000000100000ed7	movl	-0xc(%rbp), %esi
+0000000100000eda	movl	-0x10(%rbp), %edx
+0000000100000edd	movq	%rax, %rcx
+0000000100000ee0	movb	$0x0, %al
+0000000100000ee2	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000ee7	movl	%eax, -0x14(%rbp)
+0000000100000eea	addq	$0x20, %rsp
+0000000100000eee	popq	%rbp
+0000000100000eef	retq
+_ivector_dump:
+0000000100000ef0	pushq	%rbp
+0000000100000ef1	movq	%rsp, %rbp
+0000000100000ef4	subq	$0x20, %rsp
+0000000100000ef8	leaq	0xf89(%rip), %rax       ## literal pool for: "["
+0000000100000eff	movq	%rdi, -0x8(%rbp)
+0000000100000f03	movl	$0x0, -0xc(%rbp)
+0000000100000f0a	movq	%rax, %rdi
+0000000100000f0d	movb	$0x0, %al
+0000000100000f0f	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000f14	movl	%eax, -0x10(%rbp)
+0000000100000f17	movl	-0xc(%rbp), %eax
+0000000100000f1a	movq	-0x8(%rbp), %rcx
+0000000100000f1e	cmpl	0xc(%rcx), %eax
+0000000100000f21	jae	0x100000f96
+0000000100000f27	cmpl	$0x0, -0xc(%rbp)
+0000000100000f2e	jne	0x100000f65
+0000000100000f34	leaq	0xf4f(%rip), %rdi       ## literal pool for: "%d"
+0000000100000f3b	movl	-0xc(%rbp), %eax
+0000000100000f3e	movl	%eax, %ecx
+0000000100000f40	movq	-0x8(%rbp), %rdx
+0000000100000f44	movq	(%rdx), %rdx
+0000000100000f47	movl	(%rdx,%rcx,4), %esi
+0000000100000f4a	movb	$0x0, %al
+0000000100000f4c	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000f51	movl	-0xc(%rbp), %esi
+0000000100000f54	addl	$0x1, %esi
+0000000100000f5a	movl	%esi, -0xc(%rbp)
+0000000100000f5d	movl	%eax, -0x14(%rbp)
+0000000100000f60	jmp	0x100000f17
+0000000100000f65	leaq	0xf21(%rip), %rdi       ## literal pool for: ",%d"
+0000000100000f6c	movl	-0xc(%rbp), %eax
+0000000100000f6f	movl	%eax, %ecx
+0000000100000f71	movq	-0x8(%rbp), %rdx
+0000000100000f75	movq	(%rdx), %rdx
+0000000100000f78	movl	(%rdx,%rcx,4), %esi
+0000000100000f7b	movb	$0x0, %al
+0000000100000f7d	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000f82	movl	-0xc(%rbp), %esi
+0000000100000f85	addl	$0x1, %esi
+0000000100000f8b	movl	%esi, -0xc(%rbp)
+0000000100000f8e	movl	%eax, -0x18(%rbp)
+0000000100000f91	jmp	0x100000f17
+0000000100000f96	leaq	0xef4(%rip), %rdi       ## literal pool for: "]\n"
+0000000100000f9d	movb	$0x0, %al
+0000000100000f9f	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100000fa4	movl	%eax, -0x1c(%rbp)
+0000000100000fa7	addq	$0x20, %rsp
+0000000100000fab	popq	%rbp
+0000000100000fac	retq
+0000000100000fad	nopl	(%rax)
+_new_ivector:
+0000000100000fb0	pushq	%rbp
+0000000100000fb1	movq	%rsp, %rbp
+0000000100000fb4	subq	$0x10, %rsp
+0000000100000fb8	movabsq	$0x18, %rdi
+0000000100000fc2	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000fc7	movabsq	$0x800, %rdi            ## imm = 0x800
+0000000100000fd1	movq	%rax, -0x8(%rbp)
+0000000100000fd5	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100000fda	movq	-0x8(%rbp), %rdi
+0000000100000fde	movq	%rax, (%rdi)
+0000000100000fe1	movq	-0x8(%rbp), %rax
+0000000100000fe5	movl	$0x200, 0x8(%rax)       ## imm = 0x200
+0000000100000fec	movq	-0x8(%rbp), %rax
+0000000100000ff0	movl	$0x0, 0xc(%rax)
+0000000100000ff7	movq	-0x8(%rbp), %rax
+0000000100000ffb	movb	$0x0, 0x10(%rax)
+0000000100000fff	movq	-0x8(%rbp), %rax
+0000000100001003	addq	$0x10, %rsp
+0000000100001007	popq	%rbp
+0000000100001008	retq
+0000000100001009	nopl	(%rax)
+_ivector_delete:
+0000000100001010	pushq	%rbp
+0000000100001011	movq	%rsp, %rbp
+0000000100001014	subq	$0x10, %rsp
+0000000100001018	movq	%rdi, -0x8(%rbp)
+000000010000101c	movq	-0x8(%rbp), %rdi
+0000000100001020	cmpq	$0x0, (%rdi)
+0000000100001027	je	0x10000103c
+000000010000102d	movq	-0x8(%rbp), %rax
+0000000100001031	movq	(%rax), %rax
+0000000100001034	movq	%rax, %rdi
+0000000100001037	callq	0x100001cdc             ## symbol stub for: _free
+000000010000103c	movq	-0x8(%rbp), %rax
+0000000100001040	movq	%rax, %rdi
+0000000100001043	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001048	addq	$0x10, %rsp
+000000010000104c	popq	%rbp
+000000010000104d	retq
+000000010000104e	nop
+_ivector_push:
+0000000100001050	pushq	%rbp
+0000000100001051	movq	%rsp, %rbp
+0000000100001054	subq	$0x20, %rsp
+0000000100001058	movq	%rdi, -0x10(%rbp)
+000000010000105c	movl	%esi, -0x14(%rbp)
+000000010000105f	movq	-0x10(%rbp), %rdi
+0000000100001063	movsbl	0x10(%rdi), %esi
+0000000100001067	cmpl	$0x1, %esi
+000000010000106d	jne	0x10000107c
+0000000100001073	movb	$0x4, -0x1(%rbp)
+0000000100001077	jmp	0x100001103
+000000010000107c	movq	-0x10(%rbp), %rax
+0000000100001080	movl	0xc(%rax), %ecx
+0000000100001083	subl	$0x1, %ecx
+0000000100001089	movq	-0x10(%rbp), %rax
+000000010000108d	cmpl	0x8(%rax), %ecx
+0000000100001090	jb	0x1000010da
+0000000100001096	movq	-0x10(%rbp), %rax
+000000010000109a	cmpl	$0x0, 0xc(%rax)
+00000001000010a1	je	0x1000010da
+00000001000010a7	movq	-0x10(%rbp), %rax
+00000001000010ab	movl	0x8(%rax), %ecx
+00000001000010ae	shll	$0x1, %ecx
+00000001000010b1	movl	%ecx, 0x8(%rax)
+00000001000010b4	movq	-0x10(%rbp), %rax
+00000001000010b8	movq	(%rax), %rax
+00000001000010bb	movq	-0x10(%rbp), %rdx
+00000001000010bf	movl	0x8(%rdx), %ecx
+00000001000010c2	movl	%ecx, %edx
+00000001000010c4	shlq	$0x2, %rdx
+00000001000010c8	movq	%rax, %rdi
+00000001000010cb	movq	%rdx, %rsi
+00000001000010ce	callq	0x100001cfa             ## symbol stub for: _realloc
+00000001000010d3	movq	-0x10(%rbp), %rdx
+00000001000010d7	movq	%rax, (%rdx)
+00000001000010da	movl	-0x14(%rbp), %eax
+00000001000010dd	movq	-0x10(%rbp), %rcx
+00000001000010e1	movl	0xc(%rcx), %edx
+00000001000010e4	movl	%edx, %ecx
+00000001000010e6	movq	-0x10(%rbp), %rsi
+00000001000010ea	movq	(%rsi), %rsi
+00000001000010ed	movl	%eax, (%rsi,%rcx,4)
+00000001000010f0	movq	-0x10(%rbp), %rcx
+00000001000010f4	movl	0xc(%rcx), %eax
+00000001000010f7	addl	$0x1, %eax
+00000001000010fc	movl	%eax, 0xc(%rcx)
+00000001000010ff	movb	$0x0, -0x1(%rbp)
+0000000100001103	movsbl	-0x1(%rbp), %eax
+0000000100001107	addq	$0x20, %rsp
+000000010000110b	popq	%rbp
+000000010000110c	retq
+000000010000110d	nopl	(%rax)
+_ivector_erase:
+0000000100001110	pushq	%rbp
+0000000100001111	movq	%rsp, %rbp
+0000000100001114	subq	$0x40, %rsp
+0000000100001118	movq	%rdi, -0x10(%rbp)
+000000010000111c	movl	%esi, -0x14(%rbp)
+000000010000111f	movq	-0x10(%rbp), %rdi
+0000000100001123	movsbl	0x10(%rdi), %esi
+0000000100001127	cmpl	$0x1, %esi
+000000010000112d	jne	0x10000113f
+0000000100001133	movl	$0x4, -0x4(%rbp)
+000000010000113a	jmp	0x10000122c
+000000010000113f	movl	-0x14(%rbp), %eax
+0000000100001142	movq	-0x10(%rbp), %rcx
+0000000100001146	cmpl	0xc(%rcx), %eax
+0000000100001149	jb	0x10000115b
+000000010000114f	movl	$0x1, -0x4(%rbp)
+0000000100001156	jmp	0x10000122c
+000000010000115b	movq	-0x10(%rbp), %rax
+000000010000115f	movl	0xc(%rax), %ecx
+0000000100001162	movl	%ecx, %eax
+0000000100001164	shlq	$0x2, %rax
+0000000100001168	movl	-0x14(%rbp), %ecx
+000000010000116b	movl	%ecx, %edx
+000000010000116d	subq	%rdx, %rax
+0000000100001170	movl	%eax, %ecx
+0000000100001172	movl	%ecx, -0x18(%rbp)
+0000000100001175	movl	-0x18(%rbp), %ecx
+0000000100001178	movl	%ecx, %edi
+000000010000117a	callq	0x100001cee             ## symbol stub for: _malloc
+000000010000117f	movabsq	$-0x1, %rcx
+0000000100001189	movq	%rax, -0x20(%rbp)
+000000010000118d	movq	-0x20(%rbp), %rax
+0000000100001191	movl	-0x14(%rbp), %esi
+0000000100001194	addl	$0x1, %esi
+000000010000119a	movl	%esi, %esi
+000000010000119c	movl	%esi, %edx
+000000010000119e	movq	-0x10(%rbp), %rdi
+00000001000011a2	movq	(%rdi), %rdi
+00000001000011a5	shlq	$0x2, %rdx
+00000001000011a9	addq	%rdx, %rdi
+00000001000011ac	movl	-0x18(%rbp), %esi
+00000001000011af	movl	%esi, %edx
+00000001000011b1	movq	%rdi, -0x28(%rbp)
+00000001000011b5	movq	%rax, %rdi
+00000001000011b8	movq	-0x28(%rbp), %rsi
+00000001000011bc	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+00000001000011c1	movabsq	$-0x1, %rcx
+00000001000011cb	movl	-0x14(%rbp), %r8d
+00000001000011cf	movl	%r8d, %edx
+00000001000011d2	movq	-0x10(%rbp), %rsi
+00000001000011d6	movq	(%rsi), %rsi
+00000001000011d9	shlq	$0x2, %rdx
+00000001000011dd	addq	%rdx, %rsi
+00000001000011e0	movq	-0x20(%rbp), %rdx
+00000001000011e4	movl	-0x18(%rbp), %r8d
+00000001000011e8	movl	%r8d, %edi
+00000001000011eb	movq	%rdi, -0x30(%rbp)
+00000001000011ef	movq	%rsi, %rdi
+00000001000011f2	movq	%rdx, %rsi
+00000001000011f5	movq	-0x30(%rbp), %rdx
+00000001000011f9	movq	%rax, -0x38(%rbp)
+00000001000011fd	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100001202	movq	-0x20(%rbp), %rcx
+0000000100001206	movq	%rcx, %rdi
+0000000100001209	movq	%rax, -0x40(%rbp)
+000000010000120d	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001212	movq	-0x10(%rbp), %rax
+0000000100001216	movl	0xc(%rax), %r8d
+000000010000121a	subl	$0x1, %r8d
+0000000100001221	movl	%r8d, 0xc(%rax)
+0000000100001225	movl	$0x0, -0x4(%rbp)
+000000010000122c	movl	-0x4(%rbp), %eax
+000000010000122f	addq	$0x40, %rsp
+0000000100001233	popq	%rbp
+0000000100001234	retq
+0000000100001235	nopw	%cs:(%rax,%rax)
+_ivector_at:
+0000000100001240	pushq	%rbp
+0000000100001241	movq	%rsp, %rbp
+0000000100001244	movq	%rdi, -0x10(%rbp)
+0000000100001248	movl	%esi, -0x14(%rbp)
+000000010000124b	movl	-0x14(%rbp), %esi
+000000010000124e	movq	-0x10(%rbp), %rdi
+0000000100001252	cmpl	0xc(%rdi), %esi
+0000000100001255	jb	0x10000127e
+000000010000125b	movq	-0x10(%rbp), %rax
+000000010000125f	movl	0xc(%rax), %ecx
+0000000100001262	subl	$0x1, %ecx
+0000000100001268	movl	%ecx, %ecx
+000000010000126a	movl	%ecx, %eax
+000000010000126c	movq	-0x10(%rbp), %rdx
+0000000100001270	movq	(%rdx), %rdx
+0000000100001273	movl	(%rdx,%rax,4), %ecx
+0000000100001276	movl	%ecx, -0x4(%rbp)
+0000000100001279	jmp	0x100001290
+000000010000127e	movl	-0x14(%rbp), %eax
+0000000100001281	movl	%eax, %ecx
+0000000100001283	movq	-0x10(%rbp), %rdx
+0000000100001287	movq	(%rdx), %rdx
+000000010000128a	movl	(%rdx,%rcx,4), %eax
+000000010000128d	movl	%eax, -0x4(%rbp)
+0000000100001290	movl	-0x4(%rbp), %eax
+0000000100001293	popq	%rbp
+0000000100001294	retq
+0000000100001295	nopw	%cs:(%rax,%rax)
+_ivector_find:
+00000001000012a0	pushq	%rbp
+00000001000012a1	movq	%rsp, %rbp
+00000001000012a4	movq	%rdi, -0x10(%rbp)
+00000001000012a8	movq	%rsi, -0x18(%rbp)
+00000001000012ac	movl	%edx, -0x1c(%rbp)
+00000001000012af	movl	$0x0, -0x20(%rbp)
+00000001000012b6	movl	-0x20(%rbp), %eax
+00000001000012b9	movq	-0x10(%rbp), %rcx
+00000001000012bd	cmpl	0xc(%rcx), %eax
+00000001000012c0	jae	0x100001300
+00000001000012c6	movl	-0x20(%rbp), %eax
+00000001000012c9	movl	%eax, %ecx
+00000001000012cb	movq	-0x10(%rbp), %rdx
+00000001000012cf	movq	(%rdx), %rdx
+00000001000012d2	movl	(%rdx,%rcx,4), %eax
+00000001000012d5	cmpl	-0x1c(%rbp), %eax
+00000001000012d8	jne	0x1000012f0
+00000001000012de	movl	-0x20(%rbp), %eax
+00000001000012e1	movq	-0x18(%rbp), %rcx
+00000001000012e5	movl	%eax, (%rcx)
+00000001000012e7	movb	$0x3, -0x1(%rbp)
+00000001000012eb	jmp	0x100001304
+00000001000012f0	movl	-0x20(%rbp), %eax
+00000001000012f3	addl	$0x1, %eax
+00000001000012f8	movl	%eax, -0x20(%rbp)
+00000001000012fb	jmp	0x1000012b6
+0000000100001300	movb	$0x0, -0x1(%rbp)
+0000000100001304	movsbl	-0x1(%rbp), %eax
+0000000100001308	popq	%rbp
+0000000100001309	retq
+000000010000130a	nopw	(%rax,%rax)
+_ivector_lock:
+0000000100001310	pushq	%rbp
+0000000100001311	movq	%rsp, %rbp
+0000000100001314	movq	%rdi, -0x8(%rbp)
+0000000100001318	movq	-0x8(%rbp), %rdi
+000000010000131c	movb	$0x1, 0x10(%rdi)
+0000000100001320	popq	%rbp
+0000000100001321	retq
+0000000100001322	nopw	%cs:(%rax,%rax)
+_ivector_unlock:
+0000000100001330	pushq	%rbp
+0000000100001331	movq	%rsp, %rbp
+0000000100001334	movq	%rdi, -0x8(%rbp)
+0000000100001338	movq	-0x8(%rbp), %rdi
+000000010000133c	movb	$0x0, 0x10(%rdi)
+0000000100001340	popq	%rbp
+0000000100001341	retq
+0000000100001342	nopw	%cs:(%rax,%rax)
+_bvector_show_info:
+0000000100001350	pushq	%rbp
+0000000100001351	movq	%rsp, %rbp
+0000000100001354	subq	$0x20, %rsp
+0000000100001358	movq	%rdi, -0x8(%rbp)
+000000010000135c	movq	-0x8(%rbp), %rdi
+0000000100001360	movl	0x8(%rdi), %esi
+0000000100001363	movq	-0x8(%rbp), %rdi
+0000000100001367	movl	0xc(%rdi), %edx
+000000010000136a	movq	-0x8(%rbp), %rdi
+000000010000136e	addq	$0x10, %rdi
+0000000100001375	movl	%esi, -0xc(%rbp)
+0000000100001378	movl	%edx, -0x10(%rbp)
+000000010000137b	callq	_bool_to_string
+0000000100001380	leaq	0xb0d(%rip), %rdi       ## literal pool for: "[?] Byte Vector Info\n\t            [->] Memory size: %d\n\t            [->] Iterator: %d\n\t            [->] Is blocked: %s\n"
+0000000100001387	movl	-0xc(%rbp), %esi
+000000010000138a	movl	-0x10(%rbp), %edx
+000000010000138d	movq	%rax, %rcx
+0000000100001390	movb	$0x0, %al
+0000000100001392	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100001397	movl	%eax, -0x14(%rbp)
+000000010000139a	addq	$0x20, %rsp
+000000010000139e	popq	%rbp
+000000010000139f	retq
+_bvector_dump:
+00000001000013a0	pushq	%rbp
+00000001000013a1	movq	%rsp, %rbp
+00000001000013a4	subq	$0x20, %rsp
+00000001000013a8	leaq	0xad9(%rip), %rax       ## literal pool for: "["
+00000001000013af	movq	%rdi, -0x8(%rbp)
+00000001000013b3	movl	$0x0, -0xc(%rbp)
+00000001000013ba	movq	%rax, %rdi
+00000001000013bd	movb	$0x0, %al
+00000001000013bf	callq	0x100001cf4             ## symbol stub for: _printf
+00000001000013c4	movl	%eax, -0x10(%rbp)
+00000001000013c7	movl	-0xc(%rbp), %eax
+00000001000013ca	movq	-0x8(%rbp), %rcx
+00000001000013ce	cmpl	0xc(%rcx), %eax
+00000001000013d1	jae	0x100001468
+00000001000013d7	cmpl	$0x0, -0xc(%rbp)
+00000001000013de	jne	0x100001426
+00000001000013e4	leaq	0xb21(%rip), %rdi       ## literal pool for: "(%d|%c)"
+00000001000013eb	movl	-0xc(%rbp), %eax
+00000001000013ee	movl	%eax, %ecx
+00000001000013f0	movq	-0x8(%rbp), %rdx
+00000001000013f4	movq	(%rdx), %rdx
+00000001000013f7	movsbl	(%rdx,%rcx), %esi
+00000001000013fb	movl	-0xc(%rbp), %eax
+00000001000013fe	movl	%eax, %ecx
+0000000100001400	movq	-0x8(%rbp), %rdx
+0000000100001404	movq	(%rdx), %rdx
+0000000100001407	movsbl	(%rdx,%rcx), %edx
+000000010000140b	movb	$0x0, %al
+000000010000140d	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100001412	movl	-0xc(%rbp), %edx
+0000000100001415	addl	$0x1, %edx
+000000010000141b	movl	%edx, -0xc(%rbp)
+000000010000141e	movl	%eax, -0x14(%rbp)
+0000000100001421	jmp	0x1000013c7
+0000000100001426	leaq	0xae7(%rip), %rdi       ## literal pool for: ",(%d|%c)"
+000000010000142d	movl	-0xc(%rbp), %eax
+0000000100001430	movl	%eax, %ecx
+0000000100001432	movq	-0x8(%rbp), %rdx
+0000000100001436	movq	(%rdx), %rdx
+0000000100001439	movsbl	(%rdx,%rcx), %esi
+000000010000143d	movl	-0xc(%rbp), %eax
+0000000100001440	movl	%eax, %ecx
+0000000100001442	movq	-0x8(%rbp), %rdx
+0000000100001446	movq	(%rdx), %rdx
+0000000100001449	movsbl	(%rdx,%rcx), %edx
+000000010000144d	movb	$0x0, %al
+000000010000144f	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100001454	movl	-0xc(%rbp), %edx
+0000000100001457	addl	$0x1, %edx
+000000010000145d	movl	%edx, -0xc(%rbp)
+0000000100001460	movl	%eax, -0x18(%rbp)
+0000000100001463	jmp	0x1000013c7
+0000000100001468	leaq	0xaae(%rip), %rdi       ## literal pool for: "]"
+000000010000146f	movb	$0x0, %al
+0000000100001471	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100001476	movl	%eax, -0x1c(%rbp)
+0000000100001479	addq	$0x20, %rsp
+000000010000147d	popq	%rbp
+000000010000147e	retq
+000000010000147f	nop
+_new_bvector:
+0000000100001480	pushq	%rbp
+0000000100001481	movq	%rsp, %rbp
+0000000100001484	subq	$0x10, %rsp
+0000000100001488	movabsq	$0x18, %rdi
+0000000100001492	callq	0x100001cee             ## symbol stub for: _malloc
+0000000100001497	movabsq	$0x200, %rdi            ## imm = 0x200
+00000001000014a1	movq	%rax, -0x8(%rbp)
+00000001000014a5	callq	0x100001cee             ## symbol stub for: _malloc
+00000001000014aa	movq	-0x8(%rbp), %rdi
+00000001000014ae	movq	%rax, (%rdi)
+00000001000014b1	movq	-0x8(%rbp), %rax
+00000001000014b5	movl	$0x200, 0x8(%rax)       ## imm = 0x200
+00000001000014bc	movq	-0x8(%rbp), %rax
+00000001000014c0	movl	$0x0, 0xc(%rax)
+00000001000014c7	movq	-0x8(%rbp), %rax
+00000001000014cb	movb	$0x0, 0x10(%rax)
+00000001000014cf	movq	-0x8(%rbp), %rax
+00000001000014d3	addq	$0x10, %rsp
+00000001000014d7	popq	%rbp
+00000001000014d8	retq
+00000001000014d9	nopl	(%rax)
+_bvector_delete:
+00000001000014e0	pushq	%rbp
+00000001000014e1	movq	%rsp, %rbp
+00000001000014e4	subq	$0x10, %rsp
+00000001000014e8	movq	%rdi, -0x8(%rbp)
+00000001000014ec	movq	-0x8(%rbp), %rdi
+00000001000014f0	movq	(%rdi), %rdi
+00000001000014f3	callq	0x100001cdc             ## symbol stub for: _free
+00000001000014f8	movq	-0x8(%rbp), %rdi
+00000001000014fc	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001501	addq	$0x10, %rsp
+0000000100001505	popq	%rbp
+0000000100001506	retq
+0000000100001507	nopw	(%rax,%rax)
+_bvector_push:
+0000000100001510	pushq	%rbp
+0000000100001511	movq	%rsp, %rbp
+0000000100001514	subq	$0x20, %rsp
+0000000100001518	movb	%sil, %al
+000000010000151b	movq	%rdi, -0x10(%rbp)
+000000010000151f	movb	%al, -0x11(%rbp)
+0000000100001522	movq	-0x10(%rbp), %rdi
+0000000100001526	movsbl	0x10(%rdi), %esi
+000000010000152a	cmpl	$0x1, %esi
+0000000100001530	jne	0x10000153f
+0000000100001536	movb	$0x4, -0x1(%rbp)
+000000010000153a	jmp	0x1000015bd
+000000010000153f	movq	-0x10(%rbp), %rax
+0000000100001543	movl	0xc(%rax), %ecx
+0000000100001546	subl	$0x1, %ecx
+000000010000154c	movq	-0x10(%rbp), %rax
+0000000100001550	cmpl	0x8(%rax), %ecx
+0000000100001553	jb	0x100001593
+0000000100001559	movq	-0x10(%rbp), %rax
+000000010000155d	cmpl	$0x0, 0xc(%rax)
+0000000100001564	je	0x100001593
+000000010000156a	movq	-0x10(%rbp), %rax
+000000010000156e	movl	0x8(%rax), %ecx
+0000000100001571	shll	$0x1, %ecx
+0000000100001574	movl	%ecx, 0x8(%rax)
+0000000100001577	movq	-0x10(%rbp), %rax
+000000010000157b	movq	(%rax), %rdi
+000000010000157e	movq	-0x10(%rbp), %rax
+0000000100001582	movl	0x8(%rax), %ecx
+0000000100001585	movl	%ecx, %esi
+0000000100001587	callq	0x100001cfa             ## symbol stub for: _realloc
+000000010000158c	movq	-0x10(%rbp), %rsi
+0000000100001590	movq	%rax, (%rsi)
+0000000100001593	movb	-0x11(%rbp), %al
+0000000100001596	movq	-0x10(%rbp), %rcx
+000000010000159a	movl	0xc(%rcx), %edx
+000000010000159d	movl	%edx, %ecx
+000000010000159f	movq	-0x10(%rbp), %rsi
+00000001000015a3	movq	(%rsi), %rsi
+00000001000015a6	movb	%al, (%rsi,%rcx)
+00000001000015a9	movq	-0x10(%rbp), %rcx
+00000001000015ad	movl	0xc(%rcx), %edx
+00000001000015b0	addl	$0x1, %edx
+00000001000015b6	movl	%edx, 0xc(%rcx)
+00000001000015b9	movb	$0x0, -0x1(%rbp)
+00000001000015bd	movsbl	-0x1(%rbp), %eax
+00000001000015c1	addq	$0x20, %rsp
+00000001000015c5	popq	%rbp
+00000001000015c6	retq
+00000001000015c7	nopw	(%rax,%rax)
+_bvector_erase:
+00000001000015d0	pushq	%rbp
+00000001000015d1	movq	%rsp, %rbp
+00000001000015d4	subq	$0x40, %rsp
+00000001000015d8	movq	%rdi, -0x10(%rbp)
+00000001000015dc	movl	%esi, -0x14(%rbp)
+00000001000015df	movq	-0x10(%rbp), %rdi
+00000001000015e3	movsbl	0x10(%rdi), %esi
+00000001000015e7	cmpl	$0x1, %esi
+00000001000015ed	jne	0x1000015fc
+00000001000015f3	movb	$0x4, -0x1(%rbp)
+00000001000015f7	jmp	0x1000016be
+00000001000015fc	movl	-0x14(%rbp), %eax
+00000001000015ff	movq	-0x10(%rbp), %rcx
+0000000100001603	cmpl	0xc(%rcx), %eax
+0000000100001606	jb	0x100001615
+000000010000160c	movb	$0x1, -0x1(%rbp)
+0000000100001610	jmp	0x1000016be
+0000000100001615	movq	-0x10(%rbp), %rax
+0000000100001619	movl	0xc(%rax), %ecx
+000000010000161c	subl	-0x14(%rbp), %ecx
+000000010000161f	movl	%ecx, -0x18(%rbp)
+0000000100001622	movl	-0x18(%rbp), %ecx
+0000000100001625	movl	%ecx, %edi
+0000000100001627	callq	0x100001cee             ## symbol stub for: _malloc
+000000010000162c	movabsq	$-0x1, %rcx
+0000000100001636	movq	%rax, -0x20(%rbp)
+000000010000163a	movq	-0x20(%rbp), %rdi
+000000010000163e	movl	-0x14(%rbp), %edx
+0000000100001641	addl	$0x1, %edx
+0000000100001647	movl	%edx, %edx
+0000000100001649	movl	%edx, %eax
+000000010000164b	movq	-0x10(%rbp), %rsi
+000000010000164f	movq	(%rsi), %rsi
+0000000100001652	addq	%rax, %rsi
+0000000100001655	movl	-0x18(%rbp), %edx
+0000000100001658	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+000000010000165d	movabsq	$-0x1, %rcx
+0000000100001667	movl	-0x14(%rbp), %r8d
+000000010000166b	movl	%r8d, %edx
+000000010000166e	movq	-0x10(%rbp), %rsi
+0000000100001672	movq	(%rsi), %rsi
+0000000100001675	addq	%rdx, %rsi
+0000000100001678	movq	-0x20(%rbp), %rdx
+000000010000167c	movl	-0x18(%rbp), %r8d
+0000000100001680	movl	%r8d, %edi
+0000000100001683	movq	%rdi, -0x28(%rbp)
+0000000100001687	movq	%rsi, %rdi
+000000010000168a	movq	%rdx, %rsi
+000000010000168d	movq	-0x28(%rbp), %rdx
+0000000100001691	movq	%rax, -0x30(%rbp)
+0000000100001695	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+000000010000169a	movq	-0x20(%rbp), %rdi
+000000010000169e	movq	%rax, -0x38(%rbp)
+00000001000016a2	callq	0x100001cdc             ## symbol stub for: _free
+00000001000016a7	movq	-0x10(%rbp), %rax
+00000001000016ab	movl	0xc(%rax), %r8d
+00000001000016af	subl	$0x1, %r8d
+00000001000016b6	movl	%r8d, 0xc(%rax)
+00000001000016ba	movb	$0x0, -0x1(%rbp)
+00000001000016be	movsbl	-0x1(%rbp), %eax
+00000001000016c2	addq	$0x40, %rsp
+00000001000016c6	popq	%rbp
+00000001000016c7	retq
+00000001000016c8	nopl	(%rax,%rax)
+_bvector_at:
+00000001000016d0	pushq	%rbp
+00000001000016d1	movq	%rsp, %rbp
+00000001000016d4	movq	%rdi, -0x10(%rbp)
+00000001000016d8	movl	%esi, -0x14(%rbp)
+00000001000016db	movl	-0x14(%rbp), %esi
+00000001000016de	movq	-0x10(%rbp), %rdi
+00000001000016e2	cmpl	0xc(%rdi), %esi
+00000001000016e5	jb	0x100001710
+00000001000016eb	movq	-0x10(%rbp), %rax
+00000001000016ef	movl	0xc(%rax), %ecx
+00000001000016f2	subl	$0x1, %ecx
+00000001000016f8	movl	%ecx, %ecx
+00000001000016fa	movl	%ecx, %eax
+00000001000016fc	movq	-0x10(%rbp), %rdx
+0000000100001700	movq	(%rdx), %rdx
+0000000100001703	movb	(%rdx,%rax), %sil
+0000000100001707	movb	%sil, -0x1(%rbp)
+000000010000170b	jmp	0x100001724
+0000000100001710	movl	-0x14(%rbp), %eax
+0000000100001713	movl	%eax, %ecx
+0000000100001715	movq	-0x10(%rbp), %rdx
+0000000100001719	movq	(%rdx), %rdx
+000000010000171c	movb	(%rdx,%rcx), %sil
+0000000100001720	movb	%sil, -0x1(%rbp)
+0000000100001724	movsbl	-0x1(%rbp), %eax
+0000000100001728	popq	%rbp
+0000000100001729	retq
+000000010000172a	nopw	(%rax,%rax)
+_bvector_find:
+0000000100001730	pushq	%rbp
+0000000100001731	movq	%rsp, %rbp
+0000000100001734	movb	%dl, %al
+0000000100001736	movq	%rdi, -0x10(%rbp)
+000000010000173a	movq	%rsi, -0x18(%rbp)
+000000010000173e	movb	%al, -0x19(%rbp)
+0000000100001741	movl	$0x0, -0x20(%rbp)
+0000000100001748	movl	-0x20(%rbp), %eax
+000000010000174b	movq	-0x10(%rbp), %rcx
+000000010000174f	cmpl	0xc(%rcx), %eax
+0000000100001752	jae	0x100001796
+0000000100001758	movl	-0x20(%rbp), %eax
+000000010000175b	movl	%eax, %ecx
+000000010000175d	movq	-0x10(%rbp), %rdx
+0000000100001761	movq	(%rdx), %rdx
+0000000100001764	movsbl	(%rdx,%rcx), %eax
+0000000100001768	movsbl	-0x19(%rbp), %esi
+000000010000176c	cmpl	%esi, %eax
+000000010000176e	jne	0x100001786
+0000000100001774	movl	-0x20(%rbp), %eax
+0000000100001777	movq	-0x18(%rbp), %rcx
+000000010000177b	movl	%eax, (%rcx)
+000000010000177d	movb	$0x3, -0x1(%rbp)
+0000000100001781	jmp	0x10000179a
+0000000100001786	movl	-0x20(%rbp), %eax
+0000000100001789	addl	$0x1, %eax
+000000010000178e	movl	%eax, -0x20(%rbp)
+0000000100001791	jmp	0x100001748
+0000000100001796	movb	$0x0, -0x1(%rbp)
+000000010000179a	movsbl	-0x1(%rbp), %eax
+000000010000179e	popq	%rbp
+000000010000179f	retq
+_bvector_lock:
+00000001000017a0	pushq	%rbp
+00000001000017a1	movq	%rsp, %rbp
+00000001000017a4	movq	%rdi, -0x8(%rbp)
+00000001000017a8	movq	-0x8(%rbp), %rdi
+00000001000017ac	movb	$0x1, 0x10(%rdi)
+00000001000017b0	popq	%rbp
+00000001000017b1	retq
+00000001000017b2	nopw	%cs:(%rax,%rax)
+_bvector_unlock:
+00000001000017c0	pushq	%rbp
+00000001000017c1	movq	%rsp, %rbp
+00000001000017c4	movq	%rdi, -0x8(%rbp)
+00000001000017c8	movq	-0x8(%rbp), %rdi
+00000001000017cc	movb	$0x0, 0x10(%rdi)
+00000001000017d0	popq	%rbp
+00000001000017d1	retq
+00000001000017d2	nopw	%cs:(%rax,%rax)
+_svector_debug:
+00000001000017e0	pushq	%rbp
+00000001000017e1	movq	%rsp, %rbp
+00000001000017e4	movq	%rdi, -0x8(%rbp)
+00000001000017e8	popq	%rbp
+00000001000017e9	retq
+00000001000017ea	nopw	(%rax,%rax)
+_svector_dump:
+00000001000017f0	pushq	%rbp
+00000001000017f1	movq	%rsp, %rbp
+00000001000017f4	subq	$0x20, %rsp
+00000001000017f8	leaq	0x720(%rip), %rax       ## literal pool for: "[SVECTOR]: [ "
+00000001000017ff	movq	%rdi, -0x8(%rbp)
+0000000100001803	movq	%rax, %rdi
+0000000100001806	movb	$0x0, %al
+0000000100001808	callq	0x100001cf4             ## symbol stub for: _printf
+000000010000180d	movl	$0x0, -0xc(%rbp)
+0000000100001814	movl	$0x0, -0xc(%rbp)
+000000010000181b	movl	%eax, -0x10(%rbp)
+000000010000181e	movl	-0xc(%rbp), %eax
+0000000100001821	movq	-0x8(%rbp), %rcx
+0000000100001825	cmpl	0xc(%rcx), %eax
+0000000100001828	jae	0x1000018a1
+000000010000182e	cmpl	$0x0, -0xc(%rbp)
+0000000100001835	jne	0x100001866
+000000010000183b	leaq	0x6eb(%rip), %rdi       ## literal pool for: "{ %s }"
+0000000100001842	movslq	-0xc(%rbp), %rax
+0000000100001846	movq	-0x8(%rbp), %rcx
+000000010000184a	movq	(%rcx), %rcx
+000000010000184d	shlq	$0x4, %rax
+0000000100001851	addq	%rax, %rcx
+0000000100001854	movq	(%rcx), %rsi
+0000000100001857	movb	$0x0, %al
+0000000100001859	callq	0x100001cf4             ## symbol stub for: _printf
+000000010000185e	movl	%eax, -0x14(%rbp)
+0000000100001861	jmp	0x10000188c
+0000000100001866	leaq	0x6c7(%rip), %rdi       ## literal pool for: ",{ %s }"
+000000010000186d	movslq	-0xc(%rbp), %rax
+0000000100001871	movq	-0x8(%rbp), %rcx
+0000000100001875	movq	(%rcx), %rcx
+0000000100001878	shlq	$0x4, %rax
+000000010000187c	addq	%rax, %rcx
+000000010000187f	movq	(%rcx), %rsi
+0000000100001882	movb	$0x0, %al
+0000000100001884	callq	0x100001cf4             ## symbol stub for: _printf
+0000000100001889	movl	%eax, -0x18(%rbp)
+000000010000188c	jmp	0x100001891
+0000000100001891	movl	-0xc(%rbp), %eax
+0000000100001894	addl	$0x1, %eax
+0000000100001899	movl	%eax, -0xc(%rbp)
+000000010000189c	jmp	0x10000181e
+00000001000018a1	leaq	0x694(%rip), %rdi       ## literal pool for: " ]\n"
+00000001000018a8	movb	$0x0, %al
+00000001000018aa	callq	0x100001cf4             ## symbol stub for: _printf
+00000001000018af	movl	%eax, -0x1c(%rbp)
+00000001000018b2	addq	$0x20, %rsp
+00000001000018b6	popq	%rbp
+00000001000018b7	retq
+00000001000018b8	nopl	(%rax,%rax)
+_new_svector:
+00000001000018c0	pushq	%rbp
+00000001000018c1	movq	%rsp, %rbp
+00000001000018c4	subq	$0x10, %rsp
+00000001000018c8	movabsq	$0x18, %rdi
+00000001000018d2	callq	0x100001cee             ## symbol stub for: _malloc
+00000001000018d7	movabsq	$0x200, %rdi            ## imm = 0x200
+00000001000018e1	movabsq	$0x10, %rsi
+00000001000018eb	movq	%rax, -0x8(%rbp)
+00000001000018ef	callq	0x100001cc4             ## symbol stub for: _calloc
+00000001000018f4	movq	-0x8(%rbp), %rsi
+00000001000018f8	movq	%rax, (%rsi)
+00000001000018fb	movq	-0x8(%rbp), %rax
+00000001000018ff	movl	$0x200, 0x8(%rax)       ## imm = 0x200
+0000000100001906	movq	-0x8(%rbp), %rax
+000000010000190a	movl	$0x0, 0xc(%rax)
+0000000100001911	movq	-0x8(%rbp), %rax
+0000000100001915	movb	$0x0, 0x10(%rax)
+0000000100001919	movq	-0x8(%rbp), %rax
+000000010000191d	addq	$0x10, %rsp
+0000000100001921	popq	%rbp
+0000000100001922	retq
+0000000100001923	nopw	%cs:(%rax,%rax)
+_svector_push:
+0000000100001930	pushq	%rbp
+0000000100001931	movq	%rsp, %rbp
+0000000100001934	subq	$0x30, %rsp
+0000000100001938	movq	%rdi, -0x8(%rbp)
+000000010000193c	movq	%rsi, -0x10(%rbp)
+0000000100001940	movq	-0x8(%rbp), %rsi
+0000000100001944	movsbl	0x10(%rsi), %eax
+0000000100001948	cmpl	$0x1, %eax
+000000010000194d	jne	0x100001958
+0000000100001953	jmp	0x100001a29
+0000000100001958	movq	-0x8(%rbp), %rax
+000000010000195c	movl	0xc(%rax), %ecx
+000000010000195f	addl	$0x1, %ecx
+0000000100001965	movq	-0x8(%rbp), %rax
+0000000100001969	cmpl	0x8(%rax), %ecx
+000000010000196c	jb	0x1000019f6
+0000000100001972	movabsq	$0x10, %rsi
+000000010000197c	movq	-0x8(%rbp), %rax
+0000000100001980	movl	0x8(%rax), %ecx
+0000000100001983	shll	$0x1, %ecx
+0000000100001986	movl	%ecx, %ecx
+0000000100001988	movl	%ecx, %edi
+000000010000198a	callq	0x100001cc4             ## symbol stub for: _calloc
+000000010000198f	movabsq	$-0x1, %rcx
+0000000100001999	movq	%rax, -0x18(%rbp)
+000000010000199d	movq	-0x18(%rbp), %rax
+00000001000019a1	movq	-0x8(%rbp), %rsi
+00000001000019a5	movq	(%rsi), %rsi
+00000001000019a8	movq	-0x8(%rbp), %rdi
+00000001000019ac	movl	0x8(%rdi), %edx
+00000001000019af	movl	%edx, %edi
+00000001000019b1	shlq	$0x4, %rdi
+00000001000019b5	movq	%rdi, -0x20(%rbp)
+00000001000019b9	movq	%rax, %rdi
+00000001000019bc	movq	-0x20(%rbp), %rdx
+00000001000019c0	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+00000001000019c5	movq	-0x8(%rbp), %rcx
+00000001000019c9	movq	(%rcx), %rcx
+00000001000019cc	movq	%rcx, %rdi
+00000001000019cf	movq	%rax, -0x28(%rbp)
+00000001000019d3	callq	0x100001cdc             ## symbol stub for: _free
+00000001000019d8	movq	-0x18(%rbp), %rax
+00000001000019dc	movq	-0x8(%rbp), %rcx
+00000001000019e0	movq	%rax, (%rcx)
+00000001000019e3	movq	-0x8(%rbp), %rax
+00000001000019e7	movl	0x8(%rax), %r8d
+00000001000019eb	addl	$0x2, %r8d
+00000001000019f2	movl	%r8d, 0x8(%rax)
+00000001000019f6	movq	-0x8(%rbp), %rax
+00000001000019fa	movl	0xc(%rax), %ecx
+00000001000019fd	movl	%ecx, %eax
+00000001000019ff	movq	-0x8(%rbp), %rdx
+0000000100001a03	movq	(%rdx), %rdx
+0000000100001a06	shlq	$0x4, %rax
+0000000100001a0a	addq	%rax, %rdx
+0000000100001a0d	movq	-0x10(%rbp), %rsi
+0000000100001a11	movq	%rdx, %rdi
+0000000100001a14	callq	_string_copy
+0000000100001a19	movq	-0x8(%rbp), %rax
+0000000100001a1d	movl	0xc(%rax), %ecx
+0000000100001a20	addl	$0x1, %ecx
+0000000100001a26	movl	%ecx, 0xc(%rax)
+0000000100001a29	addq	$0x30, %rsp
+0000000100001a2d	popq	%rbp
+0000000100001a2e	retq
+0000000100001a2f	nop
+_svector_push_text:
+0000000100001a30	pushq	%rbp
+0000000100001a31	movq	%rsp, %rbp
+0000000100001a34	subq	$0x30, %rsp
+0000000100001a38	movq	%rdi, -0x8(%rbp)
+0000000100001a3c	movq	%rsi, -0x10(%rbp)
+0000000100001a40	movq	-0x8(%rbp), %rsi
+0000000100001a44	movsbl	0x10(%rsi), %eax
+0000000100001a48	cmpl	$0x1, %eax
+0000000100001a4d	jne	0x100001a58
+0000000100001a53	jmp	0x100001b29
+0000000100001a58	movq	-0x8(%rbp), %rax
+0000000100001a5c	movl	0xc(%rax), %ecx
+0000000100001a5f	addl	$0x1, %ecx
+0000000100001a65	movq	-0x8(%rbp), %rax
+0000000100001a69	cmpl	0x8(%rax), %ecx
+0000000100001a6c	jb	0x100001af6
+0000000100001a72	movabsq	$0x10, %rsi
+0000000100001a7c	movq	-0x8(%rbp), %rax
+0000000100001a80	movl	0x8(%rax), %ecx
+0000000100001a83	shll	$0x1, %ecx
+0000000100001a86	movl	%ecx, %ecx
+0000000100001a88	movl	%ecx, %edi
+0000000100001a8a	callq	0x100001cc4             ## symbol stub for: _calloc
+0000000100001a8f	movabsq	$-0x1, %rcx
+0000000100001a99	movq	%rax, -0x18(%rbp)
+0000000100001a9d	movq	-0x18(%rbp), %rax
+0000000100001aa1	movq	-0x8(%rbp), %rsi
+0000000100001aa5	movq	(%rsi), %rsi
+0000000100001aa8	movq	-0x8(%rbp), %rdi
+0000000100001aac	movl	0x8(%rdi), %edx
+0000000100001aaf	movl	%edx, %edi
+0000000100001ab1	shlq	$0x4, %rdi
+0000000100001ab5	movq	%rdi, -0x20(%rbp)
+0000000100001ab9	movq	%rax, %rdi
+0000000100001abc	movq	-0x20(%rbp), %rdx
+0000000100001ac0	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100001ac5	movq	-0x8(%rbp), %rcx
+0000000100001ac9	movq	(%rcx), %rcx
+0000000100001acc	movq	%rcx, %rdi
+0000000100001acf	movq	%rax, -0x28(%rbp)
+0000000100001ad3	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001ad8	movq	-0x18(%rbp), %rax
+0000000100001adc	movq	-0x8(%rbp), %rcx
+0000000100001ae0	movq	%rax, (%rcx)
+0000000100001ae3	movq	-0x8(%rbp), %rax
+0000000100001ae7	movl	0x8(%rax), %r8d
+0000000100001aeb	addl	$0x2, %r8d
+0000000100001af2	movl	%r8d, 0x8(%rax)
+0000000100001af6	movq	-0x8(%rbp), %rax
+0000000100001afa	movl	0xc(%rax), %ecx
+0000000100001afd	movl	%ecx, %eax
+0000000100001aff	movq	-0x8(%rbp), %rdx
+0000000100001b03	movq	(%rdx), %rdx
+0000000100001b06	shlq	$0x4, %rax
+0000000100001b0a	addq	%rax, %rdx
+0000000100001b0d	movq	-0x10(%rbp), %rsi
+0000000100001b11	movq	%rdx, %rdi
+0000000100001b14	callq	_string_set
+0000000100001b19	movq	-0x8(%rbp), %rax
+0000000100001b1d	movl	0xc(%rax), %ecx
+0000000100001b20	addl	$0x1, %ecx
+0000000100001b26	movl	%ecx, 0xc(%rax)
+0000000100001b29	addq	$0x30, %rsp
+0000000100001b2d	popq	%rbp
+0000000100001b2e	retq
+0000000100001b2f	nop
+_svector_erase:
+0000000100001b30	pushq	%rbp
+0000000100001b31	movq	%rsp, %rbp
+0000000100001b34	subq	$0x40, %rsp
+0000000100001b38	movq	%rdi, -0x10(%rbp)
+0000000100001b3c	movl	%esi, -0x14(%rbp)
+0000000100001b3f	movq	-0x10(%rbp), %rdi
+0000000100001b43	movsbl	0x10(%rdi), %esi
+0000000100001b47	cmpl	$0x1, %esi
+0000000100001b4d	jne	0x100001b5c
+0000000100001b53	movb	$0x4, -0x1(%rbp)
+0000000100001b57	jmp	0x100001c3c
+0000000100001b5c	movl	-0x14(%rbp), %eax
+0000000100001b5f	movq	-0x10(%rbp), %rcx
+0000000100001b63	cmpl	0xc(%rcx), %eax
+0000000100001b66	jb	0x100001b75
+0000000100001b6c	movb	$0x1, -0x1(%rbp)
+0000000100001b70	jmp	0x100001c3c
+0000000100001b75	movq	-0x10(%rbp), %rax
+0000000100001b79	movl	0x8(%rax), %ecx
+0000000100001b7c	subl	-0x14(%rbp), %ecx
+0000000100001b7f	movl	%ecx, %edi
+0000000100001b81	callq	_string_alloc
+0000000100001b86	movabsq	$-0x1, %rcx
+0000000100001b90	movq	%rax, -0x20(%rbp)
+0000000100001b94	movq	-0x20(%rbp), %rax
+0000000100001b98	movl	-0x14(%rbp), %edi
+0000000100001b9b	addl	$0x1, %edi
+0000000100001ba1	movl	%edi, %edi
+0000000100001ba3	movl	%edi, %edx
+0000000100001ba5	movq	-0x10(%rbp), %rsi
+0000000100001ba9	movq	(%rsi), %rsi
+0000000100001bac	shlq	$0x4, %rdx
+0000000100001bb0	addq	%rdx, %rsi
+0000000100001bb3	movq	-0x10(%rbp), %rdx
+0000000100001bb7	movl	0x8(%rdx), %edi
+0000000100001bba	subl	-0x14(%rbp), %edi
+0000000100001bbd	movl	%edi, %edi
+0000000100001bbf	movl	%edi, %edx
+0000000100001bc1	movq	%rax, %rdi
+0000000100001bc4	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100001bc9	movabsq	$-0x1, %rcx
+0000000100001bd3	movl	-0x14(%rbp), %r8d
+0000000100001bd7	movl	%r8d, %edx
+0000000100001bda	movq	-0x10(%rbp), %rsi
+0000000100001bde	movq	(%rsi), %rsi
+0000000100001be1	shlq	$0x4, %rdx
+0000000100001be5	addq	%rdx, %rsi
+0000000100001be8	movq	-0x20(%rbp), %rdx
+0000000100001bec	movq	-0x10(%rbp), %rdi
+0000000100001bf0	movl	0x8(%rdi), %r8d
+0000000100001bf4	subl	-0x14(%rbp), %r8d
+0000000100001bf8	movl	%r8d, %r8d
+0000000100001bfb	movl	%r8d, %edi
+0000000100001bfe	movq	%rdi, -0x28(%rbp)
+0000000100001c02	movq	%rsi, %rdi
+0000000100001c05	movq	%rdx, %rsi
+0000000100001c08	movq	-0x28(%rbp), %rdx
+0000000100001c0c	movq	%rax, -0x30(%rbp)
+0000000100001c10	callq	0x100001cbe             ## symbol stub for: ___memcpy_chk
+0000000100001c15	movq	-0x20(%rbp), %rcx
+0000000100001c19	movq	%rcx, %rdi
+0000000100001c1c	movq	%rax, -0x38(%rbp)
+0000000100001c20	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001c25	movq	-0x10(%rbp), %rax
+0000000100001c29	movl	0xc(%rax), %r8d
+0000000100001c2d	subl	$0x1, %r8d
+0000000100001c34	movl	%r8d, 0xc(%rax)
+0000000100001c38	movb	$0x0, -0x1(%rbp)
+0000000100001c3c	movsbl	-0x1(%rbp), %eax
+0000000100001c40	addq	$0x40, %rsp
+0000000100001c44	popq	%rbp
+0000000100001c45	retq
+0000000100001c46	nopw	%cs:(%rax,%rax)
+_svector_at:
+0000000100001c50	pushq	%rbp
+0000000100001c51	movq	%rsp, %rbp
+0000000100001c54	movabsq	$0x0, %rax
+0000000100001c5e	movq	%rdi, -0x8(%rbp)
+0000000100001c62	movl	%esi, -0xc(%rbp)
+0000000100001c65	popq	%rbp
+0000000100001c66	retq
+0000000100001c67	nopw	(%rax,%rax)
+_svector_delete:
+0000000100001c70	pushq	%rbp
+0000000100001c71	movq	%rsp, %rbp
+0000000100001c74	subq	$0x10, %rsp
+0000000100001c78	movq	%rdi, -0x8(%rbp)
+0000000100001c7c	movq	-0x8(%rbp), %rdi
+0000000100001c80	movq	(%rdi), %rdi
+0000000100001c83	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001c88	movq	-0x8(%rbp), %rdi
+0000000100001c8c	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001c91	addq	$0x10, %rsp
+0000000100001c95	popq	%rbp
+0000000100001c96	retq
+0000000100001c97	nopw	(%rax,%rax)
+_svector_ref_delete:
+0000000100001ca0	pushq	%rbp
+0000000100001ca1	movq	%rsp, %rbp
+0000000100001ca4	subq	$0x10, %rsp
+0000000100001ca8	movq	%rdi, -0x8(%rbp)
+0000000100001cac	movq	-0x8(%rbp), %rdi
+0000000100001cb0	movq	(%rdi), %rdi
+0000000100001cb3	callq	0x100001cdc             ## symbol stub for: _free
+0000000100001cb8	addq	$0x10, %rsp
+0000000100001cbc	popq	%rbp
+0000000100001cbd	retq
